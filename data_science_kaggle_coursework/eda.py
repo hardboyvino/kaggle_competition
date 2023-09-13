@@ -1,24 +1,42 @@
-exploratory_data_analysis_options = [
-    "check_null",
-    "check_duplicate",
-    "count_unique_values",
-    "do_value_counts",
-    "check_id_column",
-    "check_index",
-    "get_feature_names",
-    "check_value_counts_across_train_test",
-    "get_freq_encoding_feature_names",
-    "get_bin_feature_names",
-    "get_power_feature_names",
-    "get_row_wise_stat_feature_names",
-    "get_cat_interaction_features",
-    "get_features_with_no_variance",
-    "check_if_floats_are_int",
-    "create_summary_df",
-    "generate_unique_count_summary",
-    "calculate_skew_summary",
-    "get_columns_with_null_values",
-]
+"""
+A collection of functions useful for Exploratory Data Analysis.
+
+To get started and know what sort of functions are available use the following:
+`import eda
+eda.exploratory_data_analysis_options()`
+
+This will print a list of all the available functions. The function naming, like with every programming
+convention, is named to be self explanatory but extensive docstring is available that provides more detailed
+information abouts the parameters, return and example usage.
+"""
+import numpy as np
+import pandas as pd
+
+
+def exploratory_data_analysis_options():
+    exploratory_data_analysis_options = [
+        "check_null",
+        "check_duplicate",
+        "count_unique_values",
+        "do_value_counts",
+        "check_id_column",
+        "check_index",
+        "get_feature_names",
+        "check_value_counts_across_train_test",
+        "get_freq_encoding_feature_names",
+        "get_bin_feature_names",
+        "get_power_feature_names",
+        "get_row_wise_stat_feature_names",
+        "get_cat_interaction_features",
+        "get_features_with_no_variance",
+        "check_if_floats_are_int",
+        "create_summary_df",
+        "generate_unique_count_summary",
+        "calculate_skew_summary",
+        "get_columns_with_null_values",
+    ]
+    for option in exploratory_data_analysis_options:
+        print(option)
 
 
 def check_null(df):
@@ -106,12 +124,12 @@ def do_value_counts(df, feature_name):
 
     Returns:
         pd.Series: A Series containing the percentage of each unique value in the specified column.
-        
+
     Example Usage:
         # Calculate value counts for a column and return percentages
         value_percentages = do_value_counts(data_df, 'column_name')
         print(value_percentages)
-        
+
     This function takes a DataFrame and a column name as input and calculates the percentage of each unique value
     in the specified column. It uses the `value_counts` method with `normalize=True` to compute the percentage
     of each unique value, including NaN (missing) values if present. The resulting Series is then sorted in
@@ -119,7 +137,7 @@ def do_value_counts(df, feature_name):
 
     Example:
         Suppose we have the following DataFrame 'data_df' with a column named 'category':
-        
+
         |   | category  |
         |---|-----------|
         | 0 | A         |
@@ -142,8 +160,9 @@ def do_value_counts(df, feature_name):
     return (
         df[feature_name]
         .value_counts(normalize=True, dropna=False)
-        .sort_values(ascending=False) * 100)
-
+        .sort_values(ascending=False)
+        * 100
+    )
 
 
 def check_index(df, data_set_name):
@@ -257,8 +276,9 @@ def get_feature_names(df, feature_name_substring):
     return [col_name for col_name in df.columns if feature_name_substring in col_name]
 
 
-
-def check_value_counts_across_train_test(train_df, test_df, feature_name, normalize=True):
+def check_value_counts_across_train_test(
+    train_df, test_df, feature_name, normalize=True
+):
     """
     Calculate the value counts of a specified feature in both a training DataFrame and a test DataFrame.
 
@@ -266,7 +286,7 @@ def check_value_counts_across_train_test(train_df, test_df, feature_name, normal
         train_df (pd.DataFrame): The training DataFrame containing the data for analysis.
         test_df (pd.DataFrame): The test DataFrame containing the data for analysis.
         feature_name (str): The name of the feature (column) for which value counts are calculated.
-        normalize (bool, optional): Whether to normalize the value counts as percentages. 
+        normalize (bool, optional): Whether to normalize the value counts as percentages.
                                     Defaults to True.
 
     Returns:
@@ -289,18 +309,23 @@ def check_value_counts_across_train_test(train_df, test_df, feature_name, normal
     """
     # Calculate value counts for the feature in both train and test DataFrames
     train_counts = (
-        train_df[feature_name].sort_index()
-        .value_counts(normalize=normalize, dropna=True) * 100)
+        train_df[feature_name]
+        .sort_index()
+        .value_counts(normalize=normalize, dropna=True)
+        * 100
+    )
     test_counts = (
-        test_df[feature_name].sort_index()
-        .value_counts(normalize=normalize, dropna=True) * 100)
+        test_df[feature_name]
+        .sort_index()
+        .value_counts(normalize=normalize, dropna=True)
+        * 100
+    )
 
     # Create a DataFrame to display the results
     count_df = pd.concat([train_counts, test_counts], axis=1).reset_index(drop=True)
     count_df.columns = [feature_name, "train", "test"]
-    
-    return count_df
 
+    return count_df
 
 
 def get_freq_encoding_feature_names(df):
@@ -349,9 +374,6 @@ def get_features_with_no_variance(df):
     return df.columns[df.nunique() <= 1]
 
 
-import numpy as np
-import pandas as pd
-
 def check_if_floats_are_int(df):
     """
     Check if the columns of type float in a DataFrame actually contain whole numbers.
@@ -375,7 +397,7 @@ def check_if_floats_are_int(df):
         print("Columns with float values that are actually integers:")
         for feature in int_features:
             print(f"- {feature}")
-        
+
         # Output:
         # Columns with float values that are actually integers:
         # - column1
@@ -390,8 +412,6 @@ def check_if_floats_are_int(df):
             print(f"Feature {column} have decimals")
     return int_features
 
-
-import pandas as pd
 
 def create_summary_df(dataframe, target_column):
     """
@@ -435,8 +455,6 @@ def create_summary_df(dataframe, target_column):
     return summary_df
 
 
-import pandas as pd
-
 def generate_unique_count_summary(df):
     """
     Generate a summary DataFrame showing the unique count, dtype, and fraction of unique values
@@ -477,9 +495,6 @@ def generate_unique_count_summary(df):
     return unique_count_df
 
 
-
-import pandas as pd
-
 def calculate_skew_summary(dataframe, numeric_features):
     """
     Calculate the skewness for each numeric feature in the input DataFrame.
@@ -496,7 +511,7 @@ def calculate_skew_summary(dataframe, numeric_features):
         numeric_features = ['feature1', 'feature2', 'feature3']
         skew_summary = calculate_skew_summary(data_df, numeric_features)
         print(skew_summary)
-        
+
     This function takes a pandas DataFrame and a list of column names representing numeric
     features within the DataFrame. It then computes the skewness for each of these numeric
     features and returns a summary DataFrame with two columns: 'feature' and 'skew'. The
@@ -513,7 +528,6 @@ def calculate_skew_summary(dataframe, numeric_features):
     df_skew.columns = ["feature", "skew"]
 
     return df_skew
-
 
 
 def get_columns_with_null_values(df):
