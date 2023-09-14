@@ -11,15 +11,15 @@ information abouts the parameters, return and example usage.
 """
 import numpy as np
 import pandas as pd
-
+import matplotlib.pyplot as plt
 
 def exploratory_data_analysis_options():
     exploratory_data_analysis_options = [
-        "check_null",
+        "check_percentage_null",
         "check_duplicate",
         "count_unique_values",
         "do_value_counts",
-        "check_id_column",
+        "check_column_montonicity",
         "check_index",
         "get_feature_names",
         "check_value_counts_across_train_test",
@@ -30,7 +30,7 @@ def exploratory_data_analysis_options():
         "get_cat_interaction_features",
         "get_features_with_no_variance",
         "check_if_floats_are_int",
-        "create_summary_df",
+        "create_column_summary_df",
         "generate_unique_count_summary",
         "calculate_skew_summary",
         "get_columns_with_null_values",
@@ -39,7 +39,7 @@ def exploratory_data_analysis_options():
         print(option)
 
 
-def check_null(df):
+def check_percentage_null(df):
     """
     Calculate the percentage of null (missing) values for each column in a DataFrame.
 
@@ -56,7 +56,7 @@ def check_null(df):
     return df.isna().sum() * 100 / len(df)
 
 
-def check_duplicate(df, subset):
+def check_duplicate(df, subset=None):
     """
     Check for duplicate rows in a DataFrame and return the count of duplicate rows.
 
@@ -203,7 +203,7 @@ def check_index(df, data_set_name):
     plt.show()
 
 
-def check_id_column(df, column_name, data_set_name):
+def check_column_montonicity(df, column_name, data_set_name):
     """
     Check the properties of a specific identifier column in the DataFrame, including continuity
     and monotonicity, and visualize it.
@@ -323,8 +323,8 @@ def check_value_counts_across_train_test(
 
     # Create a DataFrame to display the results
     count_df = pd.concat([train_counts, test_counts], axis=1).reset_index(drop=True)
-    count_df.columns = [feature_name, "train", "test"]
-
+    count_df.columns = ["train", "test"]
+    count_df.index = list(train_df[feature_name].unique())
     return count_df
 
 
@@ -413,9 +413,9 @@ def check_if_floats_are_int(df):
     return int_features
 
 
-def create_summary_df(dataframe, target_column):
+def create_column_summary_df(dataframe, target_column):
     """
-    Create a summary DataFrame from a given DataFrame with counts and percentages.
+    Create a target summary DataFrame from a given DataFrame with counts and percentages.
 
     Parameters:
         dataframe (pandas.DataFrame): The input DataFrame containing the data.
