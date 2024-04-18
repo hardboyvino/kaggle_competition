@@ -1,0 +1,8 @@
+{'LGBMRegressor': ['Length',
+                   'Sex_I',
+                   'Shell_weight',
+                   'Shucked_weight',
+                   'Shucked_weight_div_prod_of_Height_and_Whole_weight',
+                   'Shucked_weight_div_prod_of_Whole_weight_and_Shell_weight',
+                   'Viscera_weight',
+                   'Whole_weight']}
