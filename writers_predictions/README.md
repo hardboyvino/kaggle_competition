@@ -14,16 +14,17 @@
 
 ## What is my guiding light for this competition?
 Bloom's Taxonomy and Ultralearning.
+
 Remember -> Understand -> Apply -> Analyse -> Evaluate -> Create
 
 ## Has someone does this before?
 I will consider the novelty from the angle of this being a text classification problem and then the answer is yes, many people have done text classification before.
 
 To enable me gather information, I will go will the following plan.
-- [] Search Kaggle for 'text classification'.
-- [] Identify a list of top 30 Discussions (Topics) sorted by relevance. Let's call this ***Route A***
-- [] Identify a list of top 15 Datasets sorted by relevanve. Let's call this ***Route B***
-- [] Identify a list of top 10 Competitions sorted by relevance. Let's call this ***Route C***
+- [ ] Search Kaggle for 'text classification'.
+- [ ] Identify a list of top 30 Discussions (Topics) sorted by relevance. Let's call this ***Route A***
+- [ ] Identify a list of top 15 Datasets sorted by relevanve. Let's call this ***Route B***
+- [ ] Identify a list of top 10 Competitions sorted by relevance. Let's call this ***Route C***
 
 ### Route A - Discussions
 * Write down methods from the top discussions (if there is code screenshot and save)
@@ -49,8 +50,8 @@ During execution, since code must have come from different sources. All code wil
 ## Data Assessment/Visualization: Poking and Proding
 - There are no missing values
 
-## Questions from Data Assessment
+### Questions from Data Assessment
 - If we run correlation feature selection how many features will be left due to the high correlation between features?
 - Is data distribution density difference between train and original enough to affect the model?
 
-### PROGRESS
+## PROGRESS
