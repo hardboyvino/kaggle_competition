@@ -1,4 +1,4 @@
-# Think Like a Data Scientist - [Kaggle Text Classification Community Competition ](https://www.kaggle.com/competitions/ise-competition-1)
+# Think Like a Data Scientist - [Kaggle Text Classification Community Competition](https://www.kaggle.com/competitions/ise-competition-1)
 # What are the competition goals?
 1. Predict the author of excerpts from horror stories by Edgar Allan Poe, Mary Shelley and HP Lovecraft. The predictions are evaluted using logloss.
 2. Learn and apply ensembling method (both optuna and stacking).
@@ -49,9 +49,8 @@ During execution, since code must have come from different sources. All code wil
 
 # Gathering of Route Lists
 ## ROUTE A - DISCUSSIONS
-List of top 30 dicussions
-1. 
-2. 
+1. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928)
+2. [https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603)
 3. 
 4. 
 5. 
@@ -80,6 +79,7 @@ List of top 30 dicussions
 28. 
 29. 
 30. 
+
 
 ## ROUTE B - DATASETS
 1. 
