@@ -49,7 +49,7 @@ During execution, since code must have come from different sources. All code wil
 
 # Gathering of Route Lists
 ## ROUTE A - DISCUSSIONS
-1. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928)
+1. ~~[https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928)~~
 2. [https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603)
 3. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70821](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70821)
 4. [https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/335896](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/335896)
@@ -99,6 +99,7 @@ During execution, since code must have come from different sources. All code wil
 15. [IT Service Ticket Classification Dataset](https://www.kaggle.com/datasets/adisongoh/it-service-ticket-classification-dataset/data)
 
 *Bonus* 
+
 16. [Physics vs Chemistry vs Biology](https://www.kaggle.com/datasets/vivmankar/physics-vs-chemistry-vs-biology)
 
 ## ROUTE C - COMPETITIONS
@@ -114,6 +115,7 @@ During execution, since code must have come from different sources. All code wil
 10. [Tweet Sentiment Extraction](https://www.kaggle.com/competitions/tweet-sentiment-extraction)
 
 *Bonus* 
+
 11. [Natural Language Processing with Disaster Tweets](https://www.kaggle.com/competitions/nlp-getting-started)
 
 ## Data Assessment/Visualization: Poking and Proding
