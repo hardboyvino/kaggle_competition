@@ -50,9 +50,9 @@ During execution, since code must have come from different sources. All code wil
 # Gathering of Route Lists
 ## ROUTE A - DISCUSSIONS
 1. ~~[https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/78928)~~
-2. [https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603)
-3. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70821](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70821)
-4. [https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/335896](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/335896)
+2. ~~[https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603](https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/discussion/95603)~~
+3. ~~[https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70821](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70821)~~
+4. ~~[https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/335896](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/335896)~~
 5. [https://www.kaggle.com/competitions/google-quest-challenge/discussion/128184](https://www.kaggle.com/competitions/google-quest-challenge/discussion/128184)
 6. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/72519](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/72519)
 7. [https://www.kaggle.com/discussions/general/205128](https://www.kaggle.com/discussions/general/205128)
