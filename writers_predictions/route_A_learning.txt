@@ -1,0 +1,149 @@
+PREAMBLE AND DATA SPLITTING
+- Split the dataset into a smaller size for validation (about 20%) while maintaining the target class distribution via stratification. This 20% data will serve as totally unseen data after cross-validation. Then the final model can be retrain on the complete model (training and validation combined)
+
+- Also, if the dataset is large, a smaller (validation) subset that mimics the total data in target class distribution (and hopefully feature distribution) can be used to test rough and dirty ideas before computationally intensive implementation on the complete dataset.
+
+How to split the dataset -> code_snippets\getting_validation_set.png
+
+DATA VISUALIZATION
+- Get the WordCloud to visualize the frequency of words for each class. More frequent words appear bigger.
+
+- Check for examples for each target to notice if there are any perculiarities e.g. to get 5 examples, train[train['target'] == 'target_1'].iloc[5:]
+
+- Histplot for each target on the following:
+    1. Distribution of number of characters (code_snippets\data_visualization\distribution_num_char.png)
+    2. Distribution of number of words (code_snippets\data_visualization\distribution_num_words.png)
+    3. Distribution of average word length (code_snippets\data_visualization\distribution_average_word_len.png)
+    4. Distribution of each parts of speech (nouns, verbs, adverbs, adjectives)
+    5. Distribution of unique word count
+    5. Distribution of stop words
+    6. Distribution of captitalized words
+    7. Distribution of punctuations
+    8. Distribution of target (inbalance or not!)
+
+DATA CLEANING AND PREPROCESSING
+- Check for missing data (code_snippets\data_cleaning_preprocessing\check_missing_data.png)
+
+- Manual target encoding (code_snippets\data_cleaning_preprocessing\target_encoding.png)
+
+- Contraction mapping which is turning short forms into longer e.g. couldn't to could not - (https://www.kaggle.com/code/nz0722/simple-eda-text-preprocessing-jigsaw?cellIds=53&kernelSessionId=13998319) (https://www.kaggle.com/code/codename007/start-from-here-quest-complete-eda-fe?cellIds=59&kernelSessionId=25618132)
+
+- Pre-process the data:
+Getting your vocabulary close to the pretrained embeddings (e.g. BERT) means, that you should aim for your preprocessing to result in tokens that are mostly covered by word vectors.
+
+- After each step below, see how much the model improves using a simple and fast model like LGBM while also noting the improvement in the vocabulary to the pretrained embeddings.
+
+    Code for 1 to 15 are in the notebook - https://www.kaggle.com/code/sudalairajkumar/getting-started-with-text-preprocessing and https://www.kaggle.com/code/sugataghosh/e-commerce-text-classification-tf-idf-word2vec#Exploratory-Data-Analysis
+    
+    0. No text preprocessing
+    1. Lower casing
+    2. Removal of Punctuations
+    3. Removal of Stopwords
+    4. Removal of Frequent words
+    5. Removal of Rare words
+    6. Stemming
+    7. Lemmatization
+    8. Removal of emojis
+    9. Removal of emoticons
+    10. Conversion of emoticons to words
+    11. Conversion of emojis to words
+    12. Removal of URLs
+    13. Removal of HTML tags
+    14. Chat words conversion
+    15. Spelling correction
+    16. Removal of unnecessary white spaces
+    17. Substituion of acronyms
+
+
+MODELLING
+- Find the average and maximum token length for each line in the document (code_snippets\data_visualization\dataframe_token_analysis.png). it will help know if during preprocessing there is any need to deal with long texts. Embeddings like BERT have maximum token of 512 so for texts more than 512, there will loads of information missing. Truncation methods to try are:
+    - heads only: keep the first 510 tokens
+    - tail only: keep the last 510 tokens
+    - head+tail: select the first X tokens (e.g. 128) and the last 512-X tokens (The value of X is done by testing various values. Suggested are using 2^X for X in range(0, 8, 2) -> 2, 4, 8, 16, 32, 64, 128, 256)
+
+    (code_snippets\data_cleaning_preprocessing\truncation_methods.png)
+    (code_snippets\data_cleaning_preprocessing\hierarchical_trunc_methods.png)
+
+    You try the different truncations on the training data using the project evaluation score to note which truncation method has the best score and go with that method.
+
+- Fine-tuning of hyperparameters of the model from the all pretrained parameters to better tune the performance of the model for the specific dataset. 3 to 5 epochs.(code_snippets\modelling\bert_hyperparameter_tuning.png)
+
+- Within task fine-tuning of the model (BERT or otherwise) to adjust the weights of the model pretrained tokens and useful to improve model performance for the target task. 3 to 5 epochs. (code_snippets\modelling\bert_finetuning.png)
+
+- NLP models to consider for text vectorization -> 
+    - BERT (google-bert/bert-large-uncased) and 
+    - (google-bert/bert-base-uncased) and 
+    - (google-bert/bert-base-cased) and 
+    - (google-bert/bert-large-cased), 
+    - XLNet (xlnet/xlnet-large-cased)
+    - GloVe
+    - TF-idf
+    - word2vec
+    - fasttext
+    to find the best model and ensemble of models for final prediction.
+
+- Models for numerical features and vectors generated from NLP to consider ->
+    - Linear Regression (might require scaling)
+    - Ridge (might require Nystrom)
+    - K-Nearest Neighbors (might require scaling)
+    - LGBM
+    - Random Forest
+    - HistGradient
+    - ExtraTrees
+    - AdaBoost
+    - CatBoost (slow but usually the most accurate)
+    - XGBoost
+    - Bagging
+    - Neural Network (Difference between binary and multi-class NN -> https://www.kaggle.com/discussions/general/342059) [Input layer --> Embedding layer --> LSTM Layer --> Dense Layers (Fully connected) --> Output layer]
+
+
+FEATURE ENGINEERING
+- Perform feature engineering on the text data with: 
+    1. emoticon dictionary to understand the emotion in the text
+    2. an acronym dictionary so as to have more analysable words(e.g. gr8 or gr8t becomes great, lol becomes laughing out loud) [Source of acronyms to be scraped for dictionary creation - https://www.noslang.com/dictionary/]
+    3. replace targets (e.g. @John) with ||T||
+    4. replace all negations (e.g. not, no, never, n't, cannot) by tag ||NOT||
+    5. replace a sequence of repeated characters by three characters, for example, convert cooooooool to coool. replace the sequence by 3 characters so we differentiate between regular usage and emphasized usage of the word
+    6. count and percentage occurence compared to sentence length of stop words (WHY THOUGH?!)
+    7. count and percentage occurence compared to sentence length of punctuations (any punctuation at all)
+    8. count and percentage occurence compared to sentence length of exclamation marks
+    9. count and percentage occurence compared to sentence length of question marks
+    10. count and percentage occurence compared to sentence length of captitalized words
+    11. sentiment analysis using one or more of the available dictionaries (https://github.com/socius-org/sentibank) 
+        - VADER dictionary (https://pypi.org/project/vaderSentiment/)
+    12. sum polarity of each parts of speech (nouns, verbs, adverbs, adjectives). E.g. get all the nouns in a sentence and sum their polarity using VADER
+    13. percentage of each parts of speech compared to the length of sentence (nouns, verbs, adverbs, adjectives)
+    14. count of each parts of speech (nouns, verbs, adverbs, adjectives)
+    15. count of sentences in each text using '\n' as a separator
+    16. count number of words
+    17. count and percentage occurence compared to word count of unique words
+    18. count letters/characters
+    19. aggregate mean word length
+    20. count total length
+    21. count and percentage occurence compared to sentence length of title-case words (entire word is upper case)
+    22. Max word length
+    23. Named Entity Recognition (NER): Identify presence (binary feature) and categorize named entities in the text, such as names of people, organizations, locations, dates, etc., to extract meaningful information.
+    24. Compute the density (number of char/number of words)
+    25. Extract the number of words that have the first letter in capital
+
+
+FEATURE SELECTION
+Note: Feature selection is not carried out on features from NLP models such as BERT and XLNet.
+
+- Add a random feature at the following steps and do the following feature selection methods in order:
+- Ensure at each stage the remaining features either improve or retain the score. If the score reduces then skip that step as use the previous step as the next basis. This is on a case by case decision and some domain knowledge or testing might be required with a simpler model. i.e. test using all the methods on a Linear Regression before using a CatBoost
+    1. Mutual Information
+    2. Feature Importance
+    3. Permutation Importance
+
+- Then perform computationally more intensive feature selection methods for final improved score for each model: 
+    4. Recursive Feature Selection (RFECV)
+    5. Sequential Backwards Feature Selection (SFS)
+
+ENSEMBLING
+- CV score should be used to determine which approach provides the best ensemble result.
+
+    1. Weighted average
+    2. Stacking ensemble (https://machinelearningmastery.com/stacking-ensemble-for-deep-learning-neural-networks/)
+    3. Out of folds prediction weighted ensemble (https://www.kaggle.com/code/tilii7/ensemble-weights-minimization-vs-mcmc)
+    4. Optuna to find optimal weights

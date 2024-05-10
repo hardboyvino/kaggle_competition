@@ -60,25 +60,25 @@ During execution, since code must have come from different sources. All code wil
 9. [https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/326998](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/326998)
 10. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70825](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70825)
 11. [https://www.kaggle.com/competitions/feedback-prize-english-language-learning/discussion/361592](https://www.kaggle.com/competitions/feedback-prize-english-language-learning/discussion/361592)
-12. [https://www.kaggle.com/discussions/getting-started/100283](https://www.kaggle.com/discussions/getting-started/100283)
-13. [https://www.kaggle.com/competitions/lshtc/discussion/6993](https://www.kaggle.com/competitions/lshtc/discussion/6993)
-14. [https://www.kaggle.com/competitions/nlp-getting-started/discussion/344698](https://www.kaggle.com/competitions/nlp-getting-started/discussion/344698)
-15. [https://www.kaggle.com/discussions/getting-started/412744](https://www.kaggle.com/discussions/getting-started/412744)
-16. [https://www.kaggle.com/discussions/general/217877](https://www.kaggle.com/discussions/general/217877)
-17. [https://www.kaggle.com/discussions/general/291426](https://www.kaggle.com/discussions/general/291426)
-18. [https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/discussion/50477](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/discussion/50477)
-19. [https://www.kaggle.com/discussions/getting-started/220493](https://www.kaggle.com/discussions/getting-started/220493)
-20. [https://www.kaggle.com/discussions/general/197130](https://www.kaggle.com/discussions/general/197130)
-21. [https://www.kaggle.com/discussions/questions-and-answers/237859](https://www.kaggle.com/discussions/questions-and-answers/237859)
-22. [https://www.kaggle.com/discussions/general/342059](https://www.kaggle.com/discussions/general/342059)
-23. [https://www.kaggle.com/competitions/llm-detect-ai-generated-text/discussion/463471](https://www.kaggle.com/competitions/llm-detect-ai-generated-text/discussion/463471)
-24. [https://www.kaggle.com/discussions/getting-started/435185](https://www.kaggle.com/discussions/getting-started/435185)
-25. [https://www.kaggle.com/discussions/general/358858](https://www.kaggle.com/discussions/general/358858)
-26. [https://www.kaggle.com/discussions/general/401615](https://www.kaggle.com/discussions/general/401615)
-27. [https://www.kaggle.com/discussions/general/232212](https://www.kaggle.com/discussions/general/232212)
-28. [https://www.kaggle.com/competitions/kaggle-llm-science-exam/discussion/424942](https://www.kaggle.com/competitions/kaggle-llm-science-exam/discussion/424942)
-29. [https://www.kaggle.com/discussions/general/431389](https://www.kaggle.com/discussions/general/431389)
-30. [https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification/discussion/142254](https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification/discussion/142254)
+12. ~~[https://www.kaggle.com/discussions/getting-started/100283](https://www.kaggle.com/discussions/getting-started/100283)~~
+13. ~~[https://www.kaggle.com/competitions/lshtc/discussion/6993](https://www.kaggle.com/competitions/lshtc/discussion/6993)~~
+14. ~~[https://www.kaggle.com/competitions/nlp-getting-started/discussion/344698](https://www.kaggle.com/competitions/nlp-getting-started/discussion/344698)~~
+15. ~~[https://www.kaggle.com/discussions/getting-started/412744](https://www.kaggle.com/discussions/getting-started/412744)~~
+16. ~~[https://www.kaggle.com/discussions/general/217877](https://www.kaggle.com/discussions/general/217877)~~
+17. ~~[https://www.kaggle.com/discussions/general/291426](https://www.kaggle.com/discussions/general/291426)~~
+18. ~~[https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/discussion/50477](https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge/discussion/50477)~~
+19. ~~[https://www.kaggle.com/discussions/getting-started/220493](https://www.kaggle.com/discussions/getting-started/220493)~~
+20. ~~[https://www.kaggle.com/discussions/general/197130](https://www.kaggle.com/discussions/general/197130) -> Good experiment datasets for text-data multiclass target~~
+21. ~~[https://www.kaggle.com/discussions/questions-and-answers/237859](https://www.kaggle.com/discussions/questions-and-answers/237859)~~
+22. ~~[https://www.kaggle.com/discussions/general/342059](https://www.kaggle.com/discussions/general/342059)~~
+23. ~~[https://www.kaggle.com/competitions/llm-detect-ai-generated-text/discussion/463471](https://www.kaggle.com/competitions/llm-detect-ai-generated-text/discussion/463471)~~
+24. ~~[https://www.kaggle.com/discussions/getting-started/435185](https://www.kaggle.com/discussions/getting-started/435185)~~
+25. ~~[https://www.kaggle.com/discussions/general/358858](https://www.kaggle.com/discussions/general/358858)~~
+26. ~~[https://www.kaggle.com/discussions/general/401615](https://www.kaggle.com/discussions/general/401615)~~
+27. ~~[https://www.kaggle.com/discussions/general/232212](https://www.kaggle.com/discussions/general/232212)~~
+28. ~~[https://www.kaggle.com/competitions/kaggle-llm-science-exam/discussion/424942](https://www.kaggle.com/competitions/kaggle-llm-science-exam/discussion/424942)~~
+29. ~~[https://www.kaggle.com/discussions/general/431389](https://www.kaggle.com/discussions/general/431389)~~
+30. ~~[https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification/discussion/142254](https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification/discussion/142254)~~
 
 
 ## ROUTE B - DATASETS
