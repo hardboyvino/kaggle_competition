@@ -1,12 +1,16 @@
 PREAMBLE AND DATA SPLITTING
-- Split the dataset into a smaller size for validation (about 20%) while maintaining the target class distribution via stratification. This 20% data will serve as totally unseen data after cross-validation. Then the final model can be retrain on the complete model (training and validation combined)
+- Split the dataset into a smaller size for validation (about 10-20%) while maintaining the target class distribution via stratification. This validation data will serve as totally unseen data after cross-validation. Then the final model can be retrained on the complete model (training and validation combined)
 
 - Also, if the dataset is large, a smaller (validation) subset that mimics the total data in target class distribution (and hopefully feature distribution) can be used to test rough and dirty ideas before computationally intensive implementation on the complete dataset.
 
 How to split the dataset -> code_snippets\getting_validation_set.png
 
+code_snippets\data_visualization\get_percentage_unique.png
+
 DATA VISUALIZATION
-- Get the WordCloud to visualize the frequency of words for each class. More frequent words appear bigger.
+- Get the WordCloud to visualize the frequency of words for each class. More frequent words appear bigger. code_snippets\data_visualization\generate_wordcloud.png
+
+Usage Example -> generate_wordcloud(df, 'text') or generate_wordcloud(df, 'text', 'author', 'EAP')
 
 - Check for examples for each target to notice if there are any perculiarities e.g. to get 5 examples, train[train['target'] == 'target_1'].iloc[5:]
 
@@ -20,18 +24,30 @@ DATA VISUALIZATION
     6. Distribution of captitalized words
     7. Distribution of punctuations
     8. Distribution of target (inbalance or not!)
+    9. Distribution of the density (number of char/number of words)
+    10. Distribution of the total length
 
 DATA CLEANING AND PREPROCESSING
 - Check for missing data (code_snippets\data_cleaning_preprocessing\check_missing_data.png)
 
 - Manual target encoding (code_snippets\data_cleaning_preprocessing\target_encoding.png)
 
+- Pre-process the data:
+Getting your vocabulary close to the pretrained embeddings (e.g. BERT) means, that you should aim for your preprocessing to result in tokens that are mostly covered by the word vectors. (preprocess_4_embedding.ipynb)
+    Others not in code:
+    - Removal of URLs
+    - Removal of HTML tags
+    - Correction of mispelled words
+    - Substituion of acronyms
+    - Substituion of emojis for their text meaning
+    - Substituion of emoticons for their text meaning
+
 - Contraction mapping which is turning short forms into longer e.g. couldn't to could not - (https://www.kaggle.com/code/nz0722/simple-eda-text-preprocessing-jigsaw?cellIds=53&kernelSessionId=13998319) (https://www.kaggle.com/code/codename007/start-from-here-quest-complete-eda-fe?cellIds=59&kernelSessionId=25618132)
 
-- Pre-process the data:
-Getting your vocabulary close to the pretrained embeddings (e.g. BERT) means, that you should aim for your preprocessing to result in tokens that are mostly covered by word vectors.
 
-- After each step below, see how much the model improves using a simple and fast model like LGBM while also noting the improvement in the vocabulary to the pretrained embeddings.
+- After each step below, see how much the model improves using a simple and fast model like LogisticRegression or LGBM while also noting the improvement in the vocabulary to the pretrained embeddings.
+
+This step might not be necessary as it can be so computationally expensive and if the preprocessing is done well then within task fine-tuning should handle this.
 
     Code for 1 to 15 are in the notebook - https://www.kaggle.com/code/sudalairajkumar/getting-started-with-text-preprocessing and https://www.kaggle.com/code/sugataghosh/e-commerce-text-classification-tf-idf-word2vec#Exploratory-Data-Analysis
     
@@ -66,10 +82,11 @@ MODELLING
 
     You try the different truncations on the training data using the project evaluation score to note which truncation method has the best score and go with that method.
 
-- Fine-tuning of hyperparameters of the model from the all pretrained parameters to better tune the performance of the model for the specific dataset. 3 to 5 epochs.(code_snippets\modelling\bert_hyperparameter_tuning.png)
+    - And if the maximum input length for all text is much less than 512 then in the line of code tf_tokenizer(batch_sentences, padding=True, truncation=True, return_tensors='tf', max_length=max_length + 10). This will improve training time without hampering accuracy. (https://www.kaggle.com/code/mdfahimreshm/team-aambela-solution-cuet-ete-nlp-competition)
 
 - Within task fine-tuning of the model (BERT or otherwise) to adjust the weights of the model pretrained tokens and useful to improve model performance for the target task. 3 to 5 epochs. (code_snippets\modelling\bert_finetuning.png)
 
+- Fine-tuning of hyperparameters of the model from the all pretrained parameters to better tune the performance of the model for the specific dataset. 3 to 5 epochs.(code_snippets\modelling\bert_hyperparameter_tuning.png)
 - NLP models to consider for text vectorization -> 
     - BERT (google-bert/bert-large-uncased) and 
     - (google-bert/bert-base-uncased) and 
@@ -125,6 +142,8 @@ FEATURE ENGINEERING
     23. Named Entity Recognition (NER): Identify presence (binary feature) and categorize named entities in the text, such as names of people, organizations, locations, dates, etc., to extract meaningful information.
     24. Compute the density (number of char/number of words)
     25. Extract the number of words that have the first letter in capital
+    26. Convert the text to German, Spanish, French and back to english. Embed the different translations and get concat the 3 as a new feature (code_snippets\feature_engineering\lang_translation.png)
+    27. For the 5-10 rarest and major words in the train (and maybe test), add binary features for each word to say if the text contains that word or not. Especially if the word occurs with only 1 class but never in others. It is almost like a leakage.
 
 
 FEATURE SELECTION
@@ -144,6 +163,7 @@ ENSEMBLING
 - CV score should be used to determine which approach provides the best ensemble result.
 
     1. Weighted average
-    2. Stacking ensemble (https://machinelearningmastery.com/stacking-ensemble-for-deep-learning-neural-networks/)
+    2. Stacking ensemble (https://www.kaggle.com/code/abhishek/approaching-almost-any-nlp-problem-on-kaggle) and (https://machinelearningmastery.com/stacking-ensemble-for-deep-learning-neural-networks/)
     3. Out of folds prediction weighted ensemble (https://www.kaggle.com/code/tilii7/ensemble-weights-minimization-vs-mcmc)
     4. Optuna to find optimal weights
+    5. Rank average

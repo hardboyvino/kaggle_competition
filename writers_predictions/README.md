@@ -57,9 +57,9 @@ During execution, since code must have come from different sources. All code wil
 6. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/72519](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/72519)
 7. [https://www.kaggle.com/discussions/general/205128](https://www.kaggle.com/discussions/general/205128)
 8. [https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2/discussion/494873](https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2/discussion/494873)
-9. [https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/326998](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/326998)
-10. [https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70825](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70825)
-11. [https://www.kaggle.com/competitions/feedback-prize-english-language-learning/discussion/361592](https://www.kaggle.com/competitions/feedback-prize-english-language-learning/discussion/361592)
+9. ~~[https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/326998](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/326998)~~
+10. ~~[https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70825](https://www.kaggle.com/competitions/quora-insincere-questions-classification/discussion/70825)~~
+11. ~~[https://www.kaggle.com/competitions/feedback-prize-english-language-learning/discussion/361592](https://www.kaggle.com/competitions/feedback-prize-english-language-learning/discussion/361592)~~
 12. ~~[https://www.kaggle.com/discussions/getting-started/100283](https://www.kaggle.com/discussions/getting-started/100283)~~
 13. ~~[https://www.kaggle.com/competitions/lshtc/discussion/6993](https://www.kaggle.com/competitions/lshtc/discussion/6993)~~
 14. ~~[https://www.kaggle.com/competitions/nlp-getting-started/discussion/344698](https://www.kaggle.com/competitions/nlp-getting-started/discussion/344698)~~
