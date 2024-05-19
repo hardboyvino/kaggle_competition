@@ -86,7 +86,7 @@ MODELLING
 
 - Within task fine-tuning of the model (BERT or otherwise) to adjust the weights of the model pretrained tokens and useful to improve model performance for the target task. 3 to 5 epochs. (code_snippets\modelling\bert_finetuning.png)
 
-- Fine-tuning of hyperparameters of the model from the all pretrained parameters to better tune the performance of the model for the specific dataset. 3 to 5 epochs.(code_snippets\modelling\bert_hyperparameter_tuning.png)
+- Fine-tuning of hyperparameters of the model from the all pretrained parameters to better tune the performance of the model for the specific dataset. 3 to 5 epochs.(code_snippets\modelling\bert_hyperparameter_tuning.png). Complete code -> finetune_nlp_model.ipynb
 - NLP models to consider for text vectorization -> 
     - BERT (google-bert/bert-large-uncased) and 
     - (google-bert/bert-base-uncased) and 
