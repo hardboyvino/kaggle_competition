@@ -1,0 +1,39 @@
+Feature,Importance
+Curricular units 2nd sem (approved),0.1972147765321492
+Tuition fees up to date,0.0392326902346623
+Curricular units 1st sem (approved),0.031231675714035362
+Curricular units 2nd sem (grade),0.01121888920344032
+Curricular units 2nd sem (evaluations),0.007608951088755797
+Scholarship holder,0.006914882645027087
+Curricular units 2nd sem (enrolled),0.004919691286408305
+Course,0.004411472875483989
+Age at enrollment,0.00382482014508704
+Mother's occupation,0.0024017407433189588
+Curricular units 1st sem (grade),0.001931259859888166
+Debtor,0.001486941531206516
+Admission grade,0.0014724349151840734
+Curricular units 1st sem (evaluations),0.001440453141301421
+Father's occupation,0.0013998149653199476
+Curricular units 1st sem (enrolled),0.0012923646727665528
+GDP,0.001062933856559134
+Unemployment rate,0.0009670874230510894
+Gender,0.0009583810497600176
+Mother's qualification,0.000490806086040001
+Application mode,0.0004443448956446083
+Daytime/evening attendance,0.0003397823897955243
+Previous qualification (grade),0.0003310855047055172
+Displaced,0.00030203094627380357
+Previous qualification,0.00029332583807619274
+random_feature_continous,0.00027009387236057506
+Application order,0.00016553178820930993
+Curricular units 2nd sem (credited),0.00015392118199877736
+Curricular units 1st sem (credited),0.00011907629073455439
+Curricular units 1st sem (without evaluations),6.098741536668673e-05
+Educational special needs,2.904211834588111e-05
+Marital status,2.903600372742066e-05
+Nacionality,2.3232598262374893e-05
+International,2.9040220705667255e-06
+Father's qualification,2.902335279273419e-06
+Curricular units 2nd sem (without evaluations),-2.904338343935109e-05
+Inflation rate,-6.679798969478682e-05
+random_feature_categorical,-0.00012779173052884562
