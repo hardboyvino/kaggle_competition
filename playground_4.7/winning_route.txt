@@ -1,0 +1,55 @@
+## PROJECT DEFINITION
+- Evaluation metric -> ROC AUC
+- The objective of this competition is to predict which customers respond positively to an automobile insurance offer (binary target).
+- The synthetic dataset was generated from a real dataset (both could be useful)
+
+## THEORY
+### LITERATURE REVIEW
+
+### ASSUMPTIONS AND LIMITATIONS
+- I am using a laptop with 4 CPU so running code takes a long time.
+- 
+
+### DATA DEFINITION
+- X_complete -> The entire dataset
+- X and val -> Train and validation dataset (Gotten by StratifiedSplit of entire dataset)
+- X_resampled -> SMOTE resample of X
+- X_resampled_comp -> SMOTE resample of X_complete
+
+## RESULTS
+**All results are done with a 3fold CV considering the data available is a lot**
+**Except where otherwise specified**
+**Numbers in bracket are the validation scores for 10% of original train data using predict**
+**Numbers in square bracket are the validation scores for 10% of original train data using predict_proba**
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE) -> 0.875627 (0.530917)
+
+Using synthetic train and original datasets combined
+- Baseline features (cat and binary feats OHE) -> 0.874902
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE)
+- Class weight for majority class (normalized) added to LGBMClassifier -> 0.875331
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE)
+- Class weight frequency added to LGBMClassifier -> 0.875677
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE)
+- Oversampling the minority class -> 0.941698 (0.755305) [0.851721]
+
+
+
+**All results are done with a 5fold CV considering the data available is a lot**
+**Except where otherwise specified**
+**Numbers in bracket are the validation scores for 10% of original train data using predict**
+**Numbers in square bracket are the validation scores for 10% of original train data using predict_proba**
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE) -> 0.875686 (0.530917)
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE)
+- Oversampling the minority class -> 
