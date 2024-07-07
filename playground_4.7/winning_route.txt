@@ -23,7 +23,7 @@
 **Numbers in square bracket are the validation scores for 10% of original train data using predict_proba**
 
 Using synthetic train dataset only
-- Baseline features (cat and binary feats OHE) -> 0.875627 (0.530917)
+- Baseline features (cat and binary feats OHE) -> 0.875627 (0.530917) [0.874854]
 
 Using synthetic train and original datasets combined
 - Baseline features (cat and binary feats OHE) -> 0.874902
@@ -38,18 +38,13 @@ Using synthetic train dataset only
 
 Using synthetic train dataset only
 - Baseline features (cat and binary feats OHE)
-- Oversampling the minority class -> 0.941698 (0.755305) [0.851721]
-
-
-
-**All results are done with a 5fold CV considering the data available is a lot**
-**Except where otherwise specified**
-**Numbers in bracket are the validation scores for 10% of original train data using predict**
-**Numbers in square bracket are the validation scores for 10% of original train data using predict_proba**
-
-Using synthetic train dataset only
-- Baseline features (cat and binary feats OHE) -> 0.875686 (0.530917)
+- Oversampling the minority class -> 0.942878 (0.755305) [0.851721]
 
 Using synthetic train dataset only
 - Baseline features (cat and binary feats OHE)
-- Oversampling the minority class -> 
+- StratifiedShuffleSplit and use 10% data for training -> 0.873037 [0.873340]
+
+Using synthetic train dataset only
+- Baseline features (cat and binary feats OHE)
+- StratifiedShuffleSplit and use 10% data for training
+- Oversampling the minority class -> 0.955435 [0.850982]
