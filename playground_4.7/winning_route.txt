@@ -7,17 +7,14 @@
 ### LITERATURE REVIEW
 
 ### ASSUMPTIONS AND LIMITATIONS
-- I am using a laptop with 4 CPU so running code takes a long time.
+- I am using a laptop with 8 CPU so running code takes a long time.
 - 
 
 ### DATA DEFINITION
-- X_complete -> The entire dataset
 - X and val -> Train and validation dataset (Gotten by StratifiedSplit of entire dataset)
-- X_resampled -> SMOTE resample of X
-- X_resampled_comp -> SMOTE resample of X_complete
 
 ## RESULTS
-**All results are done with a 3fold CV considering the data available is a lot**
+**All results are done with a 10fold CV considering the data available is a lot**
 **Except where otherwise specified**
 **Numbers in bracket are the validation scores for 10% of original train data using predict**
 **Numbers in square bracket are the validation scores for 10% of original train data using predict_proba**
@@ -48,3 +45,60 @@ Using synthetic train dataset only
 - Baseline features (cat and binary feats OHE)
 - StratifiedShuffleSplit and use 10% data for training
 - Oversampling the minority class -> 0.955435 [0.850982]
+
+BEST EXPERIMENT SO FAR
+
+
+EXPERIMENT 1
+- Baseline features (cat and binary feats OHE) -> 0.872437 (0.872140) [0.87567]
+
+EXPERIMENT 2
+- Mutual Information features (cat and binary feats OHE) -> 0.870728 (0.870951) [0.87447]
+
+EXPERIMENT 3
+- Permutation Importance features (cat and binary feats OHE) -> 0.872451 (0.872140)
+
+EXPERIMENT 4
+- RFECV features (cat and binary feats OHE) -> 
+
+EXPERIMENT 5
+- Feature Importance features (cat and binary feats OHE) -> 
+
+EXPERIMENT 7
+- Domain Knowledge Feature Engineering (Non-OFE) features (cat and binary feats OHE) -> 
+
+EXPERIMENT 8
+- OpenFE features (cat and binary feats OHE) ->  
+
+EXPERIMENT 9
+- OpenFE Mutual Information features (cat and binary feats OHE) -> 
+
+EXPERIMENT 10
+- OpenFE Permutation Importance features (cat and binary feats OHE) -> 
+
+EXPERIMENT 11
+- OpenFE RFECV features (cat and binary feats OHE) -> 
+
+EXPERIMENT 12
+- OpenFE SFS features (cat and binary feats OHE) -> 
+
+EXPERIMENT 13
+- OpenFE Hyperparameter Tuning 1 features (cat and binary feats OHE) ->  
+
+EXPERIMENT 14
+- OpenFE Hyperparameter Tuning 2 features (cat and binary feats OHE) -> 
+
+EXPERIMENT 15
+- OpenFE Hyperparameter Tuning 3 features (cat and binary feats OHE) -> 
+
+EXPERIMENT 16
+- OpenFE Hyperparameter Tuning 4 features (cat and binary feats OHE) -> 
+
+EXPERIMENT 17
+- OpenFE Hyperparameter Tuning 5 features (cat and binary feats OHE) -> 
+
+EXPERIMENT 18
+- OpenFE Ensembling best features (cat and binary feats OHE) -> 
+
+EXPERIMENT 19
+- Autogluon (cat and binary feats OHE) -> 
