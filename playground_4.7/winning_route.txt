@@ -62,7 +62,7 @@ EXPERIMENT 4
 - RFECV features (cat and binary feats OHE) -> 0.872437 (0.872140)
 
 EXPERIMENT 5
-- SFS features (cat and binary feats OHE) -> 
+- SFS features (cat and binary feats OHE) -> 0.872437 (0.872140)
 
 EXPERIMENT 7
 - Domain Knowledge Feature Engineering (Non-OFE) features (cat and binary feats OHE) -> 

@@ -1,0 +1,11 @@
+{'LGBMClassifier': ['Age',
+                    'Driving_License',
+                    'Region_Code',
+                    'Previously_Insured',
+                    'Annual_Premium',
+                    'Policy_Sales_Channel',
+                    'Vintage',
+                    'Gender_Male',
+                    'Vehicle_Age_< 1 Year',
+                    'Vehicle_Age_> 2 Years',
+                    'Vehicle_Damage_Yes']}
