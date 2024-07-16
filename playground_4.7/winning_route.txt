@@ -59,10 +59,10 @@ EXPERIMENT 3
 - Permutation Importance features (cat and binary feats OHE) -> 0.872451 (0.872140)
 
 EXPERIMENT 4
-- RFECV features (cat and binary feats OHE) -> 
+- RFECV features (cat and binary feats OHE) -> 0.872437 (0.872140)
 
 EXPERIMENT 5
-- Feature Importance features (cat and binary feats OHE) -> 
+- SFS features (cat and binary feats OHE) -> 
 
 EXPERIMENT 7
 - Domain Knowledge Feature Engineering (Non-OFE) features (cat and binary feats OHE) -> 
