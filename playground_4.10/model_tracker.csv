@@ -1,0 +1,3 @@
+Experiment,lgbm_train,lgbm_test,autogluon_train,autogluon_test
+raw data with get_dummies only,0.955275,0.9554,0.963046,0.9569495601242842
+openfe on raw data,
